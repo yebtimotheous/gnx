@@ -1,0 +1,195 @@
+.walletContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.walletButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #1a202c;
+    cursor: pointer;
+}
+
+.walletButton:hover {
+    border-color: #cbd5e0;
+    background: #f7fafc;
+}
+
+.walletButton.connected {
+    background: #EBF4FF;
+    border-color: #90CDF4;
+    color: #2B6CB0;
+}
+
+.buttonContent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.connectedDot {
+    width: 8px;
+    height: 8px;
+    background: #48BB78;
+    border-radius: 50%;
+}
+
+.walletAddress {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.dropdownArrow {
+    transition: transform 0.2s ease;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E2E8F0;
+    animation: slideDown 0.2s ease;
+    z-index: 50;
+}
+
+.dropdownHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.dropdownTitle {
+    font-weight: 600;
+    color: #2D3748;
+}
+
+.dropdownBody {
+    padding: 16px;
+}
+
+.accountInfo {
+    margin-bottom: 16px;
+}
+
+.label {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 4px;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #F7FAFC;
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    color: #2D3748;
+}
+
+.copyButton {
+    padding: 4px;
+    border-radius: 6px;
+    color: #718096;
+    transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+    background: #EDF2F7;
+    color: #2D3748;
+}
+
+.dropdownDivider {
+    height: 1px;
+    background: #E2E8F0;
+    margin: 16px 0;
+}
+
+.dropdownActions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #4A5568;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.actionButton:hover {
+    background: #F7FAFC;
+}
+
+.disconnectButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #E53E3E;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.disconnectButton:hover {
+    background: #FFF5F5;
+}
+
+.loadingSpinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #E2E8F0;
+    border-top: 2px solid #3182CE;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.walletIcon {
+    color: currentColor;
+}

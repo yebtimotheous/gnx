@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #fcef33;
+    --secondary-color: #000000;
+    --accent-color: #4a4a4a;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f4f4f4;
+    color: var(--secondary-color);
+    padding-top: 64px;
+    /* Height of navbar */
+}
+
+/* Navbar Styles */
+.nav-wrapper {
+    @apply fixed top-0 left-0 right-0 z-50;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg,
+            var(--primary-color) 0%,
+            #fff9b0 100%);
+}
+
+.nft-card {
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.nft-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-nft {
+    animation: float 4s ease-in-out infinite;
+}
+
+.wallet-btn {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.wallet-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transition: left 0.5s;
+}
+
+.wallet-btn:hover::before {
+    left: 100%;
+}
+
+.wallet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+    background: linear-gradient(to right, #1a1a1a, #000000);
+}
+
+.wallet-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+.logo-container {
+    @apply relative flex items-center justify-center;
+    background: linear-gradient(135deg, rgba(252, 239, 51, 0.2), rgba(255, 255, 255, 0.1));
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.bg-gradient-text {
+    background: linear-gradient(135deg, #000000, #333333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links-container {
+    @apply flex space-x-8 items-center;
+    position: relative;
+}
+
+.nav-link-modern {
+    @apply relative py-2 transition-all duration-300;
+}
+
+.nav-link-modern::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 ease-in-out;
+}
+
+.nav-link-modern:hover::after {
+    @apply w-full;
+}
+
+.search-container {
+    @apply relative;
+}
+
+.search-input {
+    @apply bg-gray-100 rounded-full py-2 pl-4 pr-10 w-48 focus:w-64 transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20;
+}
+
+.search-icon {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.wallet-btn-modern {
+    @apply relative overflow-hidden rounded-xl transition-all duration-300;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet-btn-modern:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-icon {
+    @apply mr-2 transition-transform duration-300;
+}
+
+.wallet-btn-modern:hover .wallet-icon {
+    @apply transform scale-110;
+}
+
+.wallet-text {
+    @apply text-[#fcef33] font-medium;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    @apply p-2 rounded-lg focus:outline-none;
+}
+
+.hamburger {
+    @apply relative w-6 h-5;
+}
+
+.hamburger span {
+    @apply absolute left-0 w-full h-0.5 bg-black transition-all duration-300;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+    @apply transform rotate-45 top-2;
+}
+
+.hamburger.active span:nth-child(2) {
+    @apply opacity-0;
+}
+
+.hamburger.active span:nth-child(3) {
+    @apply transform -rotate-45 bottom-2;
+}
+
+.mobile-menu {
+    @apply md:hidden bg-white border-t border-gray-200;
+    animation: slideDown 0.3s ease-out;
+}
+
+.mobile-nav-link {
+    @apply block px-4 py-3 text-black font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200;
+}
+
+.mobile-wallet-btn {
+    @apply w-full text-center px-4 py-3 bg-black text-primary font-medium rounded-lg hover:bg-gray-900 transition-colors duration-200;
+}
+
+.mobile-search-container {
+    @apply relative;
+}
+
+.mobile-search-input {
+    @apply w-full bg-gray-100 rounded-lg py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-20;
+}
+
+.mobile-search-icon {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Replace the previous community section styles with these simpler ones */
+
+.community-button {
+    @apply px-6 py-3 rounded-lg text-base font-medium transition-all duration-200 flex items-center justify-center;
+}
+
+.community-button.discord {
+    @apply bg-[#5865F2] text-white hover:bg-[#4752C4];
+}
+
+.community-button.twitter {
+    @apply bg-[#1DA1F2] text-white hover:bg-[#1A8CD8];
+}
+
+.community-stat {
+    @apply bg-gray-900 p-6 rounded-lg text-center transition-all duration-200 hover:bg-gray-800;
+}
+
+.community-stat h3 {
+    @apply mb-2;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.community-button-new {
+    @apply px-8 py-3 rounded-lg text-base font-medium transition-all duration-300 flex items-center justify-center border-2 hover:scale-105;
+}
+
+.discord-new {
+    @apply bg-[#5865F2] border-[#5865F2] text-white hover:bg-transparent hover:text-[#5865F2];
+}
+
+.twitter-new {
+    @apply bg-[#1DA1F2] border-[#1DA1F2] text-white hover:bg-transparent hover:text-[#1DA1F2];
+}
+
+.stat-card-new {
+    @apply bg-gray-800/30 p-8 rounded-xl border border-gray-700 backdrop-filter backdrop-blur-sm transition-all duration-300 hover:border-gray-600 flex flex-col items-center text-center space-y-2;
+}
+
+/* Add these to your existing styles */
+
+.heading-primary {
+    @apply font-playfair font-bold;
+}
+
+.text-body {
+    @apply font-poppins;
+}
+
+.card-title {
+    @apply font-playfair font-bold text-xl;
+}
+
+.card-text {
+    @apply font-poppins text-gray-600;
+}
+
+.notify-btn {
+    @apply bg-black text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-800 flex items-center justify-center text-sm font-medium shadow-sm hover:shadow-md;
+}
+
+.notify-btn:hover {
+    @apply transform -translate-y-0.5;
+}
+
+.notify-btn:active {
+    @apply transform translate-y-0;
+}
+
+/* Update/Add these navbar-specific styles */
+
+.search-input-new {
+    @apply bg-gray-50 border border-gray-200 rounded-full py-2 pl-4 pr-10 w-48 focus:w-64 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-10 focus:border-gray-300;
+}
+
+.search-icon-new {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.mobile-search-input-new {
+    @apply w-full bg-gray-50 border border-gray-200 rounded-lg py-2.5 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-10 focus:border-gray-300;
+}
+
+.mobile-search-icon-new {
+    @apply absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400;
+}
+
+.mobile-nav-link-new {
+    @apply block px-4 py-2.5 text-black font-medium hover:bg-gray-50 rounded-lg transition-colors duration-200 border border-transparent hover:border-gray-200;
+}
+
+.mobile-wallet-btn-new {
+    @apply w-full text-center px-4 py-3 bg-black text-primary font-medium rounded-lg hover:bg-gray-900 transition-all duration-300 border border-transparent hover:border-gray-800 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.wallet-btn-modern {
+    @apply relative overflow-hidden rounded-xl transition-all duration-300 border border-transparent hover:border-gray-800;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+/* Add these new NFT Gallery styles */
+
+.nft-filter-select {
+    @apply bg-white border border-gray-200 rounded-lg px-4 py-2.5 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-gray-300 transition-all duration-200 min-w-[160px];
+}
+
+.nft-card-modern {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100;
+}
+
+.nft-category-tag {
+    @apply px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium shadow-sm;
+}
+
+.nft-time-tag {
+    @apply flex items-center px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full text-sm font-medium;
+}
+
+.nft-like-button {
+    @apply flex items-center text-gray-500 hover:text-red-500 transition-colors duration-200;
+}
+
+.bid-button {
+    @apply bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-all duration-200 text-sm font-medium transform hover:-translate-y-0.5;
+}
+
+.load-more-button {
+    @apply bg-white border-2 border-black text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300 font-medium transform hover:-translate-y-0.5;
+}
+
+/* Optional hover effects */
+.nft-card-modern:hover {
+    transform: translateY(-4px);
+}
+
+.nft-card-modern:hover .nft-category-tag {
+    @apply bg-white;
+}
+
+/* Add these new Upcoming Drops styles */
+
+.upcoming-filter-select {
+    @apply bg-white border border-gray-200 rounded-lg px-4 py-2.5 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-gray-300 transition-all duration-200 min-w-[160px];
+}
+
+.upcoming-drop-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-1;
+}
+
+.upcoming-category-tag {
+    @apply px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium shadow-sm text-black;
+}
+
+.upcoming-countdown-tag {
+    @apply flex items-center px-3 py-1.5 bg-black/80 backdrop-blur-sm rounded-full text-sm font-medium text-white;
+}
+
+.upcoming-notify-btn {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-medium shadow-sm hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+/* Optional animations */
+@keyframes pulse-subtle {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.upcoming-drop-card:hover .upcoming-countdown-tag {
+    animation: pulse-subtle 2s infinite;
+}
+
+/* Add these new Community Section styles */
+
+.community-badge {
+    @apply bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20 inline-flex items-center;
+}
+
+.text-gradient {
+    @apply bg-gradient-to-r from-primary via-yellow-300 to-primary bg-clip-text text-transparent;
+}
+
+.community-btn-new {
+    @apply flex items-center gap-3 px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.community-btn-new.discord {
+    @apply bg-[#5865F2] text-white hover:bg-[#4752C4] shadow-lg shadow-[#5865F2]/20 hover:shadow-xl hover:shadow-[#5865F2]/30;
+}
+
+.community-btn-new.twitter {
+    @apply bg-[#1DA1F2] text-white hover:bg-[#1A8CD8] shadow-lg shadow-[#1DA1F2]/20 hover:shadow-xl hover:shadow-[#1DA1F2]/30;
+}
+
+.community-stat-card {
+    @apply bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 transition-all duration-300 hover:border-primary/30 hover:-translate-y-1 hover:bg-white/10;
+}
+
+.stat-icon-wrapper {
+    @apply w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 shadow-inner;
+}
+
+.stat-number {
+    @apply text-3xl font-bold font-playfair mb-1 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
+}
+
+.stat-label {
+    @apply text-gray-400 text-sm;
+}
+
+/* Optional animation for hover effect */
+@keyframes pulse-soft {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.community-stat-card:hover .stat-icon-wrapper {
+    animation: pulse-soft 2s infinite;
+}
+
+/* Add these logo-specific styles */
+.ripple-logo {
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .ripple-logo {
+    transform: scale(1.05);
+}
+
+.ripple-wave {
+    animation: rippleWave 2s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.ripple-wave:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ripple-wave:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.ripple-wave:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.logo-dot {
+    animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes rippleWave {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes pulseDot {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

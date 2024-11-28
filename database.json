@@ -1,0 +1,111 @@
+{
+  "collections": {
+    "baby_apees": {
+      "id": "1000",
+      "name": "Baby Apees",
+      "description": "A collection of adorable baby apes on XRPL",
+      "creator": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "taxon": 1000,
+      "defaultTransferFee": 1000,
+      "royalties": {
+        "percentage": 10,
+        "beneficiary": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "attributes": [
+        "Background",
+        "Fur",
+        "Eyes",
+        "Mouth",
+        "Clothing",
+        "Accessories",
+        "Special"
+      ]
+    },
+    "cosmic_paws": {
+      "id": "2000",
+      "name": "Cosmic Paws",
+      "description": "Intergalactic pets exploring the XRPL universe",
+      "creator": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "taxon": 2000,
+      "defaultTransferFee": 500,
+      "royalties": {
+        "percentage": 5,
+        "beneficiary": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "attributes": [
+        "Species",
+        "Background",
+        "Suit",
+        "Gadgets",
+        "Expression",
+        "Rarity"
+      ]
+    }
+  },
+  "minted_nfts": {
+    "nft_records": [
+      {
+        "tokenId": "00000000000000000000000000000000000000000000000000000000000000001",
+        "collection": "baby_apees",
+        "name": "Baby Apee #001",
+        "description": "Baby Apee #001 is part of the exclusive Baby Apees Collection on XRPL. This adorable digital primate represents a new generation of blockchain art, featuring a charming baby ape with wide, curious eyes and playful expressions.",
+        "minter": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "owner": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "mintedAt": "2024-03-20T10:00:00Z",
+        "metadata": {
+          "image": "ipfs://QmXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "attributes": [
+            {
+              "trait_type": "Background",
+              "value": "Galaxy Blue"
+            },
+            {
+              "trait_type": "Fur",
+              "value": "Golden"
+            },
+            {
+              "trait_type": "Eyes",
+              "value": "Sparkly"
+            }
+          ],
+          "transferFee": 1000,
+          "taxon": 1000,
+          "royalties": 10
+        },
+        "saleHistory": [
+          {
+            "type": "mint",
+            "from": null,
+            "to": "rXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "price": null,
+            "date": "2024-03-20T10:00:00Z"
+          }
+        ]
+      }
+    ],
+    "collection_stats": {
+      "baby_apees": {
+        "total_minted": 1,
+        "unique_holders": 1,
+        "floor_price": null,
+        "total_volume": 0
+      },
+      "cosmic_paws": {
+        "total_minted": 0,
+        "unique_holders": 0,
+        "floor_price": null,
+        "total_volume": 0
+      }
+    }
+  },
+  "settings": {
+    "default_transfer_fee": 1000,
+    "default_royalties": 10,
+    "supported_networks": ["mainnet", "testnet"],
+    "ipfs_gateways": [
+      "https://gateway.pinata.cloud/ipfs/",
+      "https://ipfs.io/ipfs/",
+      "https://cloudflare-ipfs.com/ipfs/"
+    ]
+  }
+}
